@@ -32,6 +32,7 @@ namespace Brokers.Portal.Api.Controllers
             {
                 var user = _managementServices.GetUser(request.Email);
 
+                //Checking Email
                 if (user?.Email != request.Email)
                 {
                     var res = Utilities.FormCustomResponse("00", "Success", "User not found.", "");
@@ -42,7 +43,7 @@ namespace Brokers.Portal.Api.Controllers
                     };
                 }
 
-
+                //Checking Password
                 if (!_userServices.CheckPasswordHash(request.Password, user.PasswordHash))
                 {
                     var resXX = Utilities.FormCustomResponse("00", "Success", "Wrong password.", "");
@@ -56,6 +57,7 @@ namespace Brokers.Portal.Api.Controllers
                 var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
                  _configuration.GetSection("AppSettings:Token").Value));
 
+                //Creating Token
                 string? token = _userServices.CreateToken(user, secretKey);
 
                 var userData = Utilities.ConvertApplicationUserToUser(user);
@@ -96,17 +98,35 @@ namespace Brokers.Portal.Api.Controllers
         {
             try
             {
+                bool isEmailValid = Utilities.IsValid(request.Email);
+                if (request.Email.Length < 1) return BadRequest("Email field is reqyired");
+                if (!isEmailValid || request.Email.Length < 1) return BadRequest("Email format is incorrect");
+
+
+                var passwordScore = Utilities.CheckStrength(request.Password);
+                if (passwordScore < 1) return BadRequest("Password field is required");
+                if (passwordScore < 4) return BadRequest("Password is weak, try a longer password");
+          
+                var user = _managementServices.GetUser(request.Email);
+                if (user != null) return BadRequest("User with that email address already exist.");
+   
+
+                //Adding user account to to database if email is not already in the recorrds
                 string? message = _userServices.RegisterUser(request);
 
                 if (message == null)
                 {
-                    var resX = Utilities.FormCustomResponse("00", "Success", "User Created Failed, Please try again.", "");
+                    var resX = Utilities.FormCustomResponse("00", "Success", "User Creation Failed.", "");
 
                     return new JsonResult(resX)
                     {
                         StatusCode = 200,
                     };
                 }
+
+                var userX = _managementServices.GetUser(request.Email);
+
+                string mappingResponse = _managementServices.MapUserIdToRoles(userX.UserId, 2);
 
                 var res = Utilities.FormCustomResponse("00", "Success", "User Created Successfully.", "");
 

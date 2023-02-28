@@ -48,6 +48,8 @@ namespace Brokers.Portal.Modules.Management.Domain.Infrastructure
 
         public IEnumerable<UserRoles> GetUserRoles(string userId) => _roleManagement.GetUserRoles(userId);
 
+        public string? MapUserIdToRoles(string userId, int roleId) => _roleManagement.MapUserIdToRoles(userId, roleId);
+
 
 
     }

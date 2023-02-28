@@ -27,23 +27,33 @@ namespace Brokers.Portal.Api.Controllers
             {
                 ApplicationUser? user = _managementServices.GetUser(email);
 
-                User userX = new User()
+                if (user!= null)
                 {
-                    UserId = user.UserId,
-                    Username = user.Username,
-                    FirstName = user.FirstName,
-                    LastName = user.LastName,
-                    MiddleName = user.MiddleName,
-                    Email = user.Email,
-                    Mobile = user.Mobile,
-                    isActive = user.isActive,
-                    isEmailVerified = user.isEmailVerified,
-                    isProfileUpdated = user.isProfileUpdated,
-                };
+                    User userX = new User()
+                    {
+                        UserId = user.UserId,
+                        Username = user.Username,
+                        FirstName = user.FirstName,
+                        LastName = user.LastName,
+                        MiddleName = user.MiddleName,
+                        Email = user.Email,
+                        Mobile = user.Mobile,
+                        isActive = user.isActive,
+                        isEmailVerified = user.isEmailVerified,
+                        isProfileUpdated = user.isProfileUpdated,
+                    };
 
-                var res = Utilities.FormCustomResponse("00", "Success", "", userX);
+                    var res = Utilities.FormCustomResponse("00", "Success", "", userX);
 
-                return new JsonResult(res)
+                    return new JsonResult(res)
+                    {
+                        StatusCode = 200,
+                    };
+                }
+
+                var resX = Utilities.FormCustomResponse("00", "Success", "User not found.", "");
+
+                return new JsonResult(resX)
                 {
                     StatusCode = 200,
                 };

@@ -10,8 +10,6 @@ namespace Brokers.Portal.Modules.Users.Domain.Managers
     {
         public static string RegisterUser(IDbConnection db, UserDTO user)
         {
-            //ApplicationUser user = new();
-
             string sp = "spUser_AddUser";
 
             DynamicParameters prm = new DynamicParameters();

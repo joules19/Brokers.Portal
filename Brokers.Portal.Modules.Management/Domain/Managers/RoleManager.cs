@@ -84,7 +84,15 @@ namespace Brokers.Portal.Modules.Management.Domain.Managers
             return results;
         }
 
+        public static string? MapUserIdToRoles(IDbConnection db, string userId, int roleId)
+        {
+            DynamicParameters prm = new DynamicParameters();
 
+            prm.Add("@UserId", userId);
+            prm.Add("@RoleId", roleId);
 
+            DbStore.SaveData(db, "spUserRole_AddUserRole", prm);
+            return "UserRole added successfully";
+        }
     }
 }

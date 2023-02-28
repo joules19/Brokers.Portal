@@ -129,5 +129,11 @@ namespace Brokers.Portal.Modules.Management.Domain.Infrastructure
             return RoleManager.GetUserRoles(db, userId);
         }
 
+        public string? MapUserIdToRoles(string userId, int roleId)
+        {
+            using var db = DatabaseHelper.OpenDatabase(_connectionString);
+
+            return RoleManager.MapUserIdToRoles(db, userId, roleId);
+        }
     }
 }

@@ -14,5 +14,6 @@ namespace Brokers.Portal.Modules.Management.Domain.Services
         IList<Roles> GetProcessFormPermission(List<int> roles);
 
         IEnumerable<UserRoles> GetUserRoles(string userId);
+        string MapUserIdToRoles(string userId, int roleId);
     }
 }
