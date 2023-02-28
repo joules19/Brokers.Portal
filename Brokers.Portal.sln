@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brokers.Portal", "Brokers.Portal\Brokers.Portal.csproj", "{3AC5862D-D2B8-429F-AE0F-98EE24E8698D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Brokers.Portal.Api", "Brokers.Portal.Api", "{3FCCC730-DD6D-474D-9A6D-3466BE3810F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Brokers.Portal.Modules", "Brokers.Portal.Modules", "{1034024F-4B73-4DC8-916F-EB8AD1CB9C80}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Brokers.Portal.Modules.Users", "Brokers.Portal.Modules.Users", "{BAB532FC-0B46-4044-A044-94A52C66E58A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brokers.Portal.Modules.Users", "Brokers.Portal.Modules.Users\Brokers.Portal.Modules.Users.csproj", "{832F5663-60CD-45E8-9FFF-31147B9CA5D4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Brokers.Portal.Modules.Management", "Brokers.Portal.Modules.Management", "{B171408B-E0A2-4271-A6A3-9E9B81A45A67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brokers.Portal.Modules.Management", "Brokers.Portal.Modules.Management\Brokers.Portal.Modules.Management.csproj", "{6253692B-EC41-41BE-975E-2B37B9834A02}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3AC5862D-D2B8-429F-AE0F-98EE24E8698D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AC5862D-D2B8-429F-AE0F-98EE24E8698D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AC5862D-D2B8-429F-AE0F-98EE24E8698D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AC5862D-D2B8-429F-AE0F-98EE24E8698D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{832F5663-60CD-45E8-9FFF-31147B9CA5D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{832F5663-60CD-45E8-9FFF-31147B9CA5D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{832F5663-60CD-45E8-9FFF-31147B9CA5D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{832F5663-60CD-45E8-9FFF-31147B9CA5D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6253692B-EC41-41BE-975E-2B37B9834A02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6253692B-EC41-41BE-975E-2B37B9834A02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6253692B-EC41-41BE-975E-2B37B9834A02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6253692B-EC41-41BE-975E-2B37B9834A02}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3AC5862D-D2B8-429F-AE0F-98EE24E8698D} = {3FCCC730-DD6D-474D-9A6D-3466BE3810F2}
+		{BAB532FC-0B46-4044-A044-94A52C66E58A} = {1034024F-4B73-4DC8-916F-EB8AD1CB9C80}
+		{832F5663-60CD-45E8-9FFF-31147B9CA5D4} = {BAB532FC-0B46-4044-A044-94A52C66E58A}
+		{B171408B-E0A2-4271-A6A3-9E9B81A45A67} = {1034024F-4B73-4DC8-916F-EB8AD1CB9C80}
+		{6253692B-EC41-41BE-975E-2B37B9834A02} = {B171408B-E0A2-4271-A6A3-9E9B81A45A67}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A988CE3-EAFD-4199-BAC7-7E75F5BEFFF2}
+	EndGlobalSection
+EndGlobal
