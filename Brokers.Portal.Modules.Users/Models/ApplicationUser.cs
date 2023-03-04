@@ -15,6 +15,7 @@ namespace Brokers.Portal.Modules.Users.Models
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
         public string MiddleName { get; set; } = string.Empty;
+        public string CompanyId { get; set; } = string.Empty;
         public int RoleId { get; set; }
 
         public string Email { get; set; } = string.Empty;

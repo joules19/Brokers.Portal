@@ -1,10 +1,7 @@
 ﻿using Brokers.Portal.Modules.Users.Models;
 using Dapper;
 using Rds.Utilities.Database.ReadWrite;
-using System.Collections.Generic;
 using System.Data;
-using System.Diagnostics;
-using System.Reflection;
 
 namespace Brokers.Portal.Modules.Management.Domain.Managers
 {

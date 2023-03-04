@@ -3,6 +3,7 @@ using Brokers.Portal.Modules.Users.Domain.Managers.Helpers;
 using Brokers.Portal.Modules.Users.Domain.Services;
 using Brokers.Portal.Modules.Users.Models;
 using Microsoft.IdentityModel.Tokens;
+using Serilog;
 using System.Data;
 
 namespace Brokers.Portal.Modules.Users.Domain.Infrastructure
@@ -15,11 +16,29 @@ namespace Brokers.Portal.Modules.Users.Domain.Infrastructure
             _connectionString = connectionstring;
         }
 
-        public string RegisterUser(UserDTO user)
+        public ServiceResult<string> RegisterUser(UserDTO user)
         {
-            using var db = DatabaseHelper.OpenDatabase(_connectionString);
+            ServiceResult<string> result = new();
 
-            return UserRegistrationManager.RegisterUser(db, user);
+            try
+            {
+                using var db = DatabaseHelper.OpenDatabase(_connectionString);
+
+                string message = UserRegistrationManager.RegisterUser(db, user);
+
+                if (message.IsNullOrEmpty()) throw new Exception(message);
+
+                result.Payload = message;
+            }
+            catch (Exception ex)
+            {
+                result.HasError = true;
+                result.ErrorMessage = ex.Message;
+
+                Log.Information(ex.Message);
+            }
+
+            return result;
         }
 
 

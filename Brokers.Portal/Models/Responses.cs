@@ -7,15 +7,17 @@ namespace Brokers.Portal.Api.Models
         public class CustomResponse
         {
 
-            public string StatusCode { get; set; } = string.Empty;
-            public string StatusDescription { get; set; } = string.Empty;
-            public string Message { get; set; } = string.Empty;
-            public List<object>? result { get; set; }
+            public object Error { get; set; }
+            public object Data { get; set; }
 
-            public CustomResponse()
-            {
-                result = new List<object>();
-            }
+        }
+        public class AuthResp
+        {
+            public string UserId { get; set; } = String.Empty;
+        }
+        public class ErrorResp
+        {
+            public string ErrorMesssage { get; set; } = String.Empty;
         }
 
         public class Profile

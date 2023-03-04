@@ -1,4 +1,5 @@
-﻿using Brokers.Portal.Modules.Users.Models;
+﻿using Brokers.Portal.ExceptionHandling;
+using Brokers.Portal.Modules.Users.Models;
 using Dapper;
 using Rds.Utilities.Database.ReadWrite;
 using System;
@@ -22,6 +23,8 @@ namespace Brokers.Portal.Modules.Management.Domain.Managers
             prm.Add("@Email", email);
 
             var result = DbStore.LoadData<ApplicationUser>(db, sp, prm);
+
+            if (result.Count < 1) throw new DomainNotFoundException("User with that email address does not exist.");
 
             return result.FirstOrDefault();
 
@@ -60,6 +63,20 @@ namespace Brokers.Portal.Modules.Management.Domain.Managers
             DbStore.SaveData(db, "dbo.spUser_DeleteUser", prm);
 
             return "User deleted Successfully.";
+        }
+
+        public static ApplicationUser? GetUserById(IDbConnection db, string userId)
+        {
+            string sp = "spUser_GetUserById";
+
+            DynamicParameters prm = new DynamicParameters();
+
+            prm.Add("@UserId", userId);
+
+            var result = DbStore.LoadData<ApplicationUser>(db, sp, prm);
+
+
+            return result.FirstOrDefault();
         }
     }
 }

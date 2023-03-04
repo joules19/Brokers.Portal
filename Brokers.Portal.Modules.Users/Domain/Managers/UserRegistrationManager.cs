@@ -23,6 +23,8 @@ namespace Brokers.Portal.Modules.Users.Domain.Managers
             prm.Add("@PasswordHash", pHash);
             prm.Add("@PasswordSalt", pHash);
             prm.Add("@DateCreated", DateTime.Now);
+            prm.Add("@CompanyId", user.CompanyId);
+
 
             DbStore.SaveData(db, sp, prm);
 

@@ -4,7 +4,8 @@ namespace Brokers.Portal.Modules.Management.Domain.Services
 {
     public interface IManagementServices
     {
-        ApplicationUser? GetUser(string email);
+        ServiceResult<ApplicationUser?> GetUser(string email);
+        ServiceResult<ApplicationUser?> GetUserById(string userId);
         IEnumerable<ApplicationUser> GetUsers();
         string UpdateUser(User user);
         string DeleteUser(string userId);

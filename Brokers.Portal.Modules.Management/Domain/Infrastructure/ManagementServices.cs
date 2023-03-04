@@ -22,7 +22,10 @@ namespace Brokers.Portal.Modules.Management.Domain.Infrastructure
 
         }
 
-        public ApplicationUser? GetUser(string email) => _userManagement.GetUser(email);
+        public ServiceResult<ApplicationUser?> GetUser(string email) => _userManagement.GetUser(email);
+
+        public ServiceResult<ApplicationUser?> GetUserById(string userId) => _userManagement.GetUserById(userId);
+
 
         public IEnumerable<ApplicationUser> GetUsers() => _userManagement.GetUsers();
 

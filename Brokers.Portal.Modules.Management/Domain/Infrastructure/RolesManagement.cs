@@ -13,7 +13,6 @@ namespace Brokers.Portal.Modules.Management.Domain.Infrastructure
         }
 
 
-
         #region Roles
 
         public string? CreateRole(string roleName)

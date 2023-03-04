@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brokers.Portal", "Brokers.Portal\Brokers.Portal.csproj", "{3AC5862D-D2B8-429F-AE0F-98EE24E8698D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brokers.Portal", "Brokers.Portal\Brokers.Portal.csproj", "{3AC5862D-D2B8-429F-AE0F-98EE24E8698D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Brokers.Portal.Api", "Brokers.Portal.Api", "{3FCCC730-DD6D-474D-9A6D-3466BE3810F2}"
 EndProject
@@ -11,11 +11,31 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Brokers.Portal.Modules", "B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Brokers.Portal.Modules.Users", "Brokers.Portal.Modules.Users", "{BAB532FC-0B46-4044-A044-94A52C66E58A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brokers.Portal.Modules.Users", "Brokers.Portal.Modules.Users\Brokers.Portal.Modules.Users.csproj", "{832F5663-60CD-45E8-9FFF-31147B9CA5D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brokers.Portal.Modules.Users", "Brokers.Portal.Modules.Users\Brokers.Portal.Modules.Users.csproj", "{832F5663-60CD-45E8-9FFF-31147B9CA5D4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Brokers.Portal.Modules.Management", "Brokers.Portal.Modules.Management", "{B171408B-E0A2-4271-A6A3-9E9B81A45A67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brokers.Portal.Modules.Management", "Brokers.Portal.Modules.Management\Brokers.Portal.Modules.Management.csproj", "{6253692B-EC41-41BE-975E-2B37B9834A02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brokers.Portal.Modules.Management", "Brokers.Portal.Modules.Management\Brokers.Portal.Modules.Management.csproj", "{6253692B-EC41-41BE-975E-2B37B9834A02}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Brokers.Portal.Modules.Underwriting", "Brokers.Portal.Modules.Underwriting", "{0B73BC7C-B50A-4F04-8682-F9C29A2DD8BE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brokers.Portal.Modules.Underwriting", "Brokers.Portal.Modules.Underwriting\Brokers.Portal.Modules.Underwriting.csproj", "{F2517C8F-3CD3-4B17-BF86-92C78054AC42}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Brokers.Portal.Modules.Products", "Brokers.Portal.Modules.Products", "{15AF6CBC-F975-41A2-95C4-76533D5361DD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brokers.Portal.Modules.Products", "Brokers.Portal.Modules.Products\Brokers.Portal.Modules.Products.csproj", "{EE9F29B7-E627-4FBF-A915-014D5BEA52AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Brokers.Portal.ExceptionHandling", "Brokers.Portal.ExceptionHandling", "{F7BEE591-0A6C-41FD-8ABA-987B7995C318}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brokers.Portal.ExceptionHandling", "Brokers.Portal.ExceptionHandling\Brokers.Portal.ExceptionHandling.csproj", "{FA41FC8D-C7AB-40A6-AEAF-A4DE17E6D14F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Brokers.Portal.Modules.Company", "Brokers.Portal.Modules.Company", "{0E0DA0DA-CF72-42C9-B848-60FA3494CFE4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brokers.Portal.Modules.Company", "Brokers.Portal.Modules.Companies\Brokers.Portal.Modules.Company.csproj", "{AB3A2AA4-7E8B-4D18-B65F-B8ED356A16A3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Brokers.Portal.DB", "Brokers.Portal.DB", "{D3AA23DD-E3EB-4DF5-B71B-0E0F140B1A1A}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BrokersPortalDB", "BrokersPortalDB\BrokersPortalDB.sqlproj", "{77554EB2-A47C-4F84-AD59-6EE20273D4FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +55,28 @@ Global
 		{6253692B-EC41-41BE-975E-2B37B9834A02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6253692B-EC41-41BE-975E-2B37B9834A02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6253692B-EC41-41BE-975E-2B37B9834A02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2517C8F-3CD3-4B17-BF86-92C78054AC42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2517C8F-3CD3-4B17-BF86-92C78054AC42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2517C8F-3CD3-4B17-BF86-92C78054AC42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2517C8F-3CD3-4B17-BF86-92C78054AC42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE9F29B7-E627-4FBF-A915-014D5BEA52AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE9F29B7-E627-4FBF-A915-014D5BEA52AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE9F29B7-E627-4FBF-A915-014D5BEA52AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE9F29B7-E627-4FBF-A915-014D5BEA52AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA41FC8D-C7AB-40A6-AEAF-A4DE17E6D14F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA41FC8D-C7AB-40A6-AEAF-A4DE17E6D14F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA41FC8D-C7AB-40A6-AEAF-A4DE17E6D14F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA41FC8D-C7AB-40A6-AEAF-A4DE17E6D14F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB3A2AA4-7E8B-4D18-B65F-B8ED356A16A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB3A2AA4-7E8B-4D18-B65F-B8ED356A16A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB3A2AA4-7E8B-4D18-B65F-B8ED356A16A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB3A2AA4-7E8B-4D18-B65F-B8ED356A16A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77554EB2-A47C-4F84-AD59-6EE20273D4FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77554EB2-A47C-4F84-AD59-6EE20273D4FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77554EB2-A47C-4F84-AD59-6EE20273D4FD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{77554EB2-A47C-4F84-AD59-6EE20273D4FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77554EB2-A47C-4F84-AD59-6EE20273D4FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77554EB2-A47C-4F84-AD59-6EE20273D4FD}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +87,14 @@ Global
 		{832F5663-60CD-45E8-9FFF-31147B9CA5D4} = {BAB532FC-0B46-4044-A044-94A52C66E58A}
 		{B171408B-E0A2-4271-A6A3-9E9B81A45A67} = {1034024F-4B73-4DC8-916F-EB8AD1CB9C80}
 		{6253692B-EC41-41BE-975E-2B37B9834A02} = {B171408B-E0A2-4271-A6A3-9E9B81A45A67}
+		{0B73BC7C-B50A-4F04-8682-F9C29A2DD8BE} = {1034024F-4B73-4DC8-916F-EB8AD1CB9C80}
+		{F2517C8F-3CD3-4B17-BF86-92C78054AC42} = {0B73BC7C-B50A-4F04-8682-F9C29A2DD8BE}
+		{15AF6CBC-F975-41A2-95C4-76533D5361DD} = {1034024F-4B73-4DC8-916F-EB8AD1CB9C80}
+		{EE9F29B7-E627-4FBF-A915-014D5BEA52AF} = {15AF6CBC-F975-41A2-95C4-76533D5361DD}
+		{FA41FC8D-C7AB-40A6-AEAF-A4DE17E6D14F} = {F7BEE591-0A6C-41FD-8ABA-987B7995C318}
+		{0E0DA0DA-CF72-42C9-B848-60FA3494CFE4} = {1034024F-4B73-4DC8-916F-EB8AD1CB9C80}
+		{AB3A2AA4-7E8B-4D18-B65F-B8ED356A16A3} = {0E0DA0DA-CF72-42C9-B848-60FA3494CFE4}
+		{77554EB2-A47C-4F84-AD59-6EE20273D4FD} = {D3AA23DD-E3EB-4DF5-B71B-0E0F140B1A1A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2A988CE3-EAFD-4199-BAC7-7E75F5BEFFF2}

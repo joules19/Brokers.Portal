@@ -7,7 +7,79 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="DomainException.cs" />
+    <Compile Remove="ExceptionHandlingMiddleware.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="bin\Debug\net6.0\appsettings.Development.json" />
+    <Content Include="bin\Debug\net6.0\appsettings.json" />
+    <Content Include="bin\Debug\net6.0\Brokers.Portal.deps.json" />
+    <Content Include="bin\Debug\net6.0\Brokers.Portal.runtimeconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Debug\net6.0\Brokers.Portal.dll" />
+    <None Include="bin\Debug\net6.0\Brokers.Portal.ExceptionHandling.dll" />
+    <None Include="bin\Debug\net6.0\Brokers.Portal.ExceptionHandling.pdb" />
+    <None Include="bin\Debug\net6.0\Brokers.Portal.exe" />
+    <None Include="bin\Debug\net6.0\Brokers.Portal.Modules.Company.dll" />
+    <None Include="bin\Debug\net6.0\Brokers.Portal.Modules.Company.pdb" />
+    <None Include="bin\Debug\net6.0\Brokers.Portal.Modules.Management.dll" />
+    <None Include="bin\Debug\net6.0\Brokers.Portal.Modules.Management.pdb" />
+    <None Include="bin\Debug\net6.0\Brokers.Portal.Modules.Products.dll" />
+    <None Include="bin\Debug\net6.0\Brokers.Portal.Modules.Products.pdb" />
+    <None Include="bin\Debug\net6.0\Brokers.Portal.Modules.Underwriting.dll" />
+    <None Include="bin\Debug\net6.0\Brokers.Portal.Modules.Underwriting.pdb" />
+    <None Include="bin\Debug\net6.0\Brokers.Portal.Modules.Users.dll" />
+    <None Include="bin\Debug\net6.0\Brokers.Portal.Modules.Users.pdb" />
+    <None Include="bin\Debug\net6.0\Brokers.Portal.pdb" />
+    <None Include="bin\Debug\net6.0\Dapper.dll" />
+    <None Include="bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll" />
+    <None Include="bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll" />
+    <None Include="bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll" />
+    <None Include="bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll" />
+    <None Include="bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll" />
+    <None Include="bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll" />
+    <None Include="bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll" />
+    <None Include="bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll" />
+    <None Include="bin\Debug\net6.0\Microsoft.OpenApi.dll" />
+    <None Include="bin\Debug\net6.0\Rds.Utilities.Database.ReadWrite.dll" />
+    <None Include="bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll" />
+    <None Include="bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll" />
+    <None Include="bin\Debug\net6.0\runtimes\win-x64\native\sni.dll" />
+    <None Include="bin\Debug\net6.0\runtimes\win-x86\native\sni.dll" />
+    <None Include="bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll" />
+    <None Include="bin\Debug\net6.0\Serilog.AspNetCore.dll" />
+    <None Include="bin\Debug\net6.0\Serilog.dll" />
+    <None Include="bin\Debug\net6.0\Serilog.Extensions.Hosting.dll" />
+    <None Include="bin\Debug\net6.0\Serilog.Extensions.Logging.dll" />
+    <None Include="bin\Debug\net6.0\Serilog.Formatting.Compact.dll" />
+    <None Include="bin\Debug\net6.0\Serilog.Settings.Configuration.dll" />
+    <None Include="bin\Debug\net6.0\Serilog.Sinks.Console.dll" />
+    <None Include="bin\Debug\net6.0\Serilog.Sinks.Debug.dll" />
+    <None Include="bin\Debug\net6.0\Serilog.Sinks.File.dll" />
+    <None Include="bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll" />
+    <None Include="bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll" />
+    <None Include="bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll" />
+    <None Include="bin\Debug\net6.0\System.Data.SqlClient.dll" />
+    <None Include="bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Brokers.Portal.ExceptionHandling\Brokers.Portal.ExceptionHandling.csproj" />
+    <ProjectReference Include="..\Brokers.Portal.Modules.Companies\Brokers.Portal.Modules.Company.csproj" />
     <ProjectReference Include="..\Brokers.Portal.Modules.Management\Brokers.Portal.Modules.Management.csproj" />
+    <ProjectReference Include="..\Brokers.Portal.Modules.Products\Brokers.Portal.Modules.Products.csproj" />
+    <ProjectReference Include="..\Brokers.Portal.Modules.Underwriting\Brokers.Portal.Modules.Underwriting.csproj" />
     <ProjectReference Include="..\Brokers.Portal.Modules.Users\Brokers.Portal.Modules.Users.csproj" />
   </ItemGroup>
 </Project>

@@ -23,46 +23,42 @@ namespace Brokers.Portal.Api.Controllers
         [HttpGet, Route("getuser")]
         public IActionResult GetUser(string email)
         {
-            try
+
+            var result = _managementServices.GetUser(email);
+
+            if (result?.HasError != null)
             {
-                ApplicationUser? user = _managementServices.GetUser(email);
-
-                if (user!= null)
+                var user = result.Payload;
+                User userX = new User()
                 {
-                    User userX = new User()
-                    {
-                        UserId = user.UserId,
-                        Username = user.Username,
-                        FirstName = user.FirstName,
-                        LastName = user.LastName,
-                        MiddleName = user.MiddleName,
-                        Email = user.Email,
-                        Mobile = user.Mobile,
-                        isActive = user.isActive,
-                        isEmailVerified = user.isEmailVerified,
-                        isProfileUpdated = user.isProfileUpdated,
-                    };
+                    UserId = user.UserId,
+                    Username = user.Username,
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    MiddleName = user.MiddleName,
+                    Email = user.Email,
+                    Mobile = user.Mobile,
+                    isActive = user.isActive,
+                    isEmailVerified = user.isEmailVerified,
+                    isProfileUpdated = user.isProfileUpdated,
+                };
 
-                    var res = Utilities.FormCustomResponse("00", "Success", "", userX);
+                var res = Utilities.FormCustomResponse("", userX);
 
-                    return new JsonResult(res)
-                    {
-                        StatusCode = 200,
-                    };
-                }
-
-                var resX = Utilities.FormCustomResponse("00", "Success", "User not found.", "");
-
-                return new JsonResult(resX)
+                return new JsonResult(res)
                 {
                     StatusCode = 200,
                 };
             }
-            catch (Exception ex)
-            {
 
-                throw new Exception("Error", ex);
-            }
+            var resX = Utilities.FormCustomResponse("User not found.", "");
+
+            return new JsonResult(resX)
+            {
+                StatusCode = 404,
+            };
+
+
         }
         #endregion
 
