@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[BP_Packages]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY,
+	[PackageName] VARCHAR(100) NOT NULL, 
+	[ProductId] INT NOT NULL,
+
+)

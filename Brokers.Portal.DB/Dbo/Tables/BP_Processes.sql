@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[BP_Processes]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY,
+	[ProcessName] VARCHAR(100) NOT NULL,
+	[EntryUrl] VARCHAR(100) NOT NULL,
+	[ModuleId] INT NOT NULL,
+)
+

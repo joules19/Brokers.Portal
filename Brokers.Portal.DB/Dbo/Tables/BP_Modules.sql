@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[BP_Modules]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY,
+	[ModuleName] VARCHAR(100) NOT NULL
+)

@@ -1,0 +1,4 @@
+﻿CREATE TABLE [dbo].[BP_Requests]
+(
+	[Id] INT NOT NULL PRIMARY KEY
+)
