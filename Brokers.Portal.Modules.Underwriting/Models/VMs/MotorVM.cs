@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Brokers.Portal.Modules.Underwriting.Models.VMs
 {
-    public class VehicleVM
+    public class MotorVM
     {
         [Required]
         public string? Title { get; set; }

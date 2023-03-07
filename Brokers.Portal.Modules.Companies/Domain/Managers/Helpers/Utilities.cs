@@ -52,7 +52,7 @@ namespace Brokers.Portal.Modules.Users.Domain.Managers.Helpers
                 int num = _random.Value.Next(0, chars.Length);
                 sb.Append(chars[num]);
             }
-            return $"BR-{sb.ToString()}";
+            return $"BP-{sb.ToString()}";
         }
     }
 }

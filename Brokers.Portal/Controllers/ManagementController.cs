@@ -1,8 +1,6 @@
 ﻿using Brokers.Portal.Api.Helpers;
 using Brokers.Portal.Modules.Management.Domain.Services;
-using Brokers.Portal.Modules.Users.Domain.Services;
 using Brokers.Portal.Modules.Users.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Brokers.Portal.Api.Controllers
@@ -19,47 +17,48 @@ namespace Brokers.Portal.Api.Controllers
 
         #region Users
 
-        [ApiExplorerSettings(IgnoreApi = false)]
-        [HttpGet, Route("getuser")]
-        public IActionResult GetUser(string email)
-        {
+        //[ApiExplorerSettings(IgnoreApi = false)]
+        //[HttpGet, Route("getuser")]
+        //public IActionResult GetUser(string email)
+        //{
 
-            var result = _managementServices.GetUser(email);
+        //    var result = _managementServices.GetUser(email);
 
-            if (result?.HasError != null)
-            {
-                var user = result.Payload;
-                User userX = new User()
-                {
-                    UserId = user.UserId,
-                    Username = user.Username,
-                    FirstName = user.FirstName,
-                    LastName = user.LastName,
-                    MiddleName = user.MiddleName,
-                    Email = user.Email,
-                    Mobile = user.Mobile,
-                    isActive = user.isActive,
-                    isEmailVerified = user.isEmailVerified,
-                    isProfileUpdated = user.isProfileUpdated,
-                };
+        //    if (result?.HasError != null)
+        //    {
+        //        var user = result.Payload;
 
-                var res = Utilities.FormCustomResponse("", userX);
+        //        User userX = new User()
+        //        {
+        //            UserId = user.UserId,
+        //            Username = user.Username,
+        //            FirstName = user.FirstName,
+        //            LastName = user.LastName,
+        //            MiddleName = user.MiddleName,
+        //            Email = user.Email,
+        //            Mobile = user.Mobile,
+        //            isActive = user.isActive,
+        //            isEmailVerified = user.isEmailVerified,
+        //            isProfileUpdated = user.isProfileUpdated,
+        //        };
 
-                return new JsonResult(res)
-                {
-                    StatusCode = 200,
-                };
-            }
+        //        var res = Utilities.FormCustomResponse("", userX);
 
-            var resX = Utilities.FormCustomResponse("User not found.", "");
+        //        return new JsonResult(res)
+        //        {
+        //            StatusCode = 200,
+        //        };
+        //    }
 
-            return new JsonResult(resX)
-            {
-                StatusCode = 404,
-            };
+        //    var resX = Utilities.FormCustomResponse("User not found.", "");
+
+        //    return new JsonResult(resX)
+        //    {
+        //        StatusCode = 404,
+        //    };
 
 
-        }
+        //}
         #endregion
 
     }

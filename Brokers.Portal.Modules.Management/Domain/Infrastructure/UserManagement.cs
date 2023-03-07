@@ -1,8 +1,8 @@
-﻿using Brokers.Portal.ExceptionHandling;
+﻿using Brokers.Portal.MiddleWares;
 using Brokers.Portal.Modules.Management.Domain.Managers;
 using Brokers.Portal.Modules.Management.Domain.Managers.Helpers;
+using Brokers.Portal.Modules.Management.Models;
 using Brokers.Portal.Modules.Users.Domain.Managers;
-using Brokers.Portal.Modules.Users.Models;
 using Serilog;
 
 namespace Brokers.Portal.Modules.Management.Domain.Infrastructure

@@ -1,6 +1,6 @@
 ﻿using Brokers.Portal.Modules.Management.Domain.Managers;
 using Brokers.Portal.Modules.Management.Domain.Managers.Helpers;
-using Brokers.Portal.Modules.Users.Models;
+using Brokers.Portal.Modules.Management.Models;
 
 namespace Brokers.Portal.Modules.Management.Domain.Infrastructure
 {

@@ -1,4 +1,5 @@
-﻿using Brokers.Portal.Modules.Users.Models;
+﻿
+using Brokers.Portal.Modules.Management.Models;
 
 namespace Brokers.Portal.Api.Models
 {

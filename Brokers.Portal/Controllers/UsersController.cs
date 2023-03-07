@@ -5,7 +5,11 @@ using Brokers.Portal.Modules.Management.Domain.Services;
 using Brokers.Portal.Modules.Users.Domain.Services;
 using Brokers.Portal.Modules.Users.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Net.Http.Headers;
+using Microsoft.OpenApi.Validations.Rules;
 using Serilog;
+using Swashbuckle.AspNetCore.Annotations;
+using System.Net.Mime;
 using System.Text;
 using static Brokers.Portal.Api.Models.Responses;
 
@@ -19,7 +23,6 @@ namespace Brokers.Portal.Api.Controllers
         private readonly IUserServices _userServices;
         private readonly IManagementServices _managementServices;
         private readonly ICompanyServices _companyServices;
-        private readonly ILogger<UsersController> _log;
         public UsersController(
             IConfiguration configuration,
             IUserServices userServices,
@@ -34,7 +37,34 @@ namespace Brokers.Portal.Api.Controllers
         }
 
 
+
+
+        /// <remarks>
+        /// Sample Request:
+        /// 
+        ///     POST
+        ///     {
+        ///         "companyId": "BP-11111",
+        ///         "loginCredential": "asW2rW5AZ21haWwuY29tOnVzbWFuMTIz"
+        ///     }
+        /// Sample Response:
+        /// 
+        ///     {
+        ///          "error": {},
+        ///          "data": {
+        ///              "userId": "o94UUd14-f18d-474b-922a-2104e184f0af"
+        ///           }
+        ///     }
+        /// </remarks>
+        /// <summary>
+        /// Authenticates user then returns the userId after successful authentication.
+        /// </summary>
+        /// <response code="200">User authentication success.</response>
+        /// <response code="400">Bad request: if any of companyId or password is incorrect.</response>
+        /// <response code="404">Not Found: if user with that email address does not exist.</response>
+        //[ProducesResponseType(StatusCodes.Status404NotFound)]
         [ApiExplorerSettings(IgnoreApi = false)]
+        [SwaggerResponse(StatusCodes.Status200OK, Type = typeof(AuthResp))]
         [HttpPost, Route("authenticate")]
         public IActionResult Authenticate([FromBody] AuthVm request)
         {
@@ -85,7 +115,15 @@ namespace Brokers.Portal.Api.Controllers
         }
 
 
+
+        /// <summary>
+        ///     Accepts a valid user Id then returns the corresponding user profile.
+        /// </summary>
+        /// <response code="200">Ok Response with User profile object</response>
+        /// <response code="400">Bad request: if user Id is in wrong format.</response>
+        /// <response code="404">Not Found: if user with that email address does not exist.</response>
         [ApiExplorerSettings(IgnoreApi = false)]
+        [SwaggerResponse(StatusCodes.Status200OK, Type = typeof(Profile))]
         [HttpGet, Route("getprofile")]
         public IActionResult GetProfile(string userId)
         {
@@ -123,7 +161,30 @@ namespace Brokers.Portal.Api.Controllers
         }
 
 
+        /// <remarks>
+        /// Sample Request:
+        /// 
+        ///     POST
+        ///     {
+        ///         "signupCredential": "asW2rW5AZ21haWwuY29tOnVzbWFuMTIz"
+        ///     }
+        /// Sample Response:
+        /// 
+        ///     {
+        ///          "error": {},
+        ///          "data": "User Registered Successfully."
+        ///     }
+        /// </remarks>
+        /// <summary>
+        ///     Registers a new user.
+        /// </summary>
+        /// <response code="201">If the user was created successfully</response>
+        /// <response code="400">Bad request: If Supplied Email or Password is in wrong format.
+        /// Bad Request: If a user with the supplied email already exists.
+        /// </response>
+        /// <response code="500">If an unknwn error occured while registering user.</response>
         [ApiExplorerSettings(IgnoreApi = false)]
+        [SwaggerResponse(StatusCodes.Status200OK)]
         [HttpPost, Route("register")]
         public IActionResult Register(RegisterVm request)
         {

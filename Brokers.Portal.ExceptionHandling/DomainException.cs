@@ -1,4 +1,4 @@
-﻿namespace Brokers.Portal.ExceptionHandling
+﻿namespace Brokers.Portal.MiddleWares
 {
     public abstract class DomainException : Exception
     {

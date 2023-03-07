@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Brokers.Portal.Modules.Users.Models
+namespace Brokers.Portal.Modules.Management.Models
 {
     public class UserFormPermission
     {

@@ -7,7 +7,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <BaseOutputPath>obj\Debug\net6.0\BrokersPortal.xml</BaseOutputPath>
+    <BaseOutputPath>obj\Debug\net6.0\Brokers.Portal.xml</BaseOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -73,11 +73,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MicroElements.Swashbuckle.FluentValidation" Version="5.7.0" />
     <PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
     <PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
     <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.5.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
   </ItemGroup>
@@ -90,8 +88,4 @@
     <ProjectReference Include="..\Brokers.Portal.Modules.Underwriting\Brokers.Portal.Modules.Underwriting.csproj" />
     <ProjectReference Include="..\Brokers.Portal.Modules.Users\Brokers.Portal.Modules.Users.csproj" />
   </ItemGroup>
-
-	<PropertyGroup>
-		<GenerateDocumentationFile>true</GenerateDocumentationFile>
-	</PropertyGroup>
 </Project>

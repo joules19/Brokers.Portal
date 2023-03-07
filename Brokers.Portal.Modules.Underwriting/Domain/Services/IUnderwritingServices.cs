@@ -10,6 +10,6 @@ namespace Brokers.Portal.Modules.Underwriting.Domain.Services
 {
     public interface IUnderwritingServices
     {
-        ServiceResult<string> SubmitVehicleQuote(VehicleVM model);
+        ServiceResult<string> SubmitRequestForMotor(MotorVM model);
     }
 }

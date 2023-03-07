@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Brokers.Portal.Modules.Users.Models
+namespace Brokers.Portal.Modules.ManagementModels
 {
 
     //public class UserProfile

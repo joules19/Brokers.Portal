@@ -1,5 +1,5 @@
 ﻿using Brokers.Portal.Modules.Management.Domain.Services;
-using Brokers.Portal.Modules.Users.Models;
+using Brokers.Portal.Modules.Management.Models;
 using System;
 using System.Collections;
 using System.Collections.Generic;

@@ -12,6 +12,6 @@ namespace Brokers.Portal.Modules.Underwriting.Domain.Infrastructure
             _quoteService = new QuoteService(connectionstring); 
         }
 
-        public ServiceResult<string> SubmitVehicleQuote(VehicleVM model) => _quoteService.SubmitQuoteForVehicle(model);
+        public ServiceResult<string> SubmitRequestForMotor(MotorVM model) => _quoteService.SubmitRequestForMotor(model);
     }
 }

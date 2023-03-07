@@ -15,11 +15,11 @@ namespace Brokers.Portal.Controllers
             _underwritingServices = underwritingServices;
         }
 
-        #region Quotes
+        #region Requests
 
         [ApiExplorerSettings(IgnoreApi = false)]
-        [HttpGet, Route("submitvehiclequote")]
-        public IActionResult SubmitVehicleQuote(VehicleVM model)
+        [HttpGet, Route("submitrequestformotor")]
+        public IActionResult SubmitRequestForMotor(MotorVM model)
         {
 
             if (!ModelState.IsValid)
@@ -27,7 +27,7 @@ namespace Brokers.Portal.Controllers
                 return BadRequest("All fields are required");
             }
 
-            var result = _underwritingServices.SubmitVehicleQuote(model);
+            var result = _underwritingServices.SubmitRequestForMotor(model);
 
             if (result.HasError)
             {
@@ -38,7 +38,7 @@ namespace Brokers.Portal.Controllers
                 };
             }
 
-            var resX = Utilities.FormCustomResponse("", "Quote Submitted Sucessfully.");
+            var resX = Utilities.FormCustomResponse("", "Result Submitted Sucessfully.");
             return new JsonResult(resX)
             {
                 StatusCode = 200,

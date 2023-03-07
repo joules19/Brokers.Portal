@@ -1,4 +1,5 @@
-﻿using Brokers.Portal.Modules.Users.Models;
+﻿using Brokers.Portal.Modules.Management.Models;
+using Brokers.Portal.Modules.Users.Models;
 using Dapper;
 using Rds.Utilities.Database.ReadWrite;
 using System.Data;

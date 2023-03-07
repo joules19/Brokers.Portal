@@ -25,9 +25,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Brokers.Portal.Modules.Prod
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brokers.Portal.Modules.Products", "Brokers.Portal.Modules.Products\Brokers.Portal.Modules.Products.csproj", "{EE9F29B7-E627-4FBF-A915-014D5BEA52AF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Brokers.Portal.ExceptionHandling", "Brokers.Portal.ExceptionHandling", "{F7BEE591-0A6C-41FD-8ABA-987B7995C318}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Brokers.Portal.MiddleWares", "Brokers.Portal.MiddleWares", "{F7BEE591-0A6C-41FD-8ABA-987B7995C318}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brokers.Portal.ExceptionHandling", "Brokers.Portal.ExceptionHandling\Brokers.Portal.ExceptionHandling.csproj", "{FA41FC8D-C7AB-40A6-AEAF-A4DE17E6D14F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brokers.Portal.MiddleWares", "Brokers.Portal.ExceptionHandling\Brokers.Portal.MiddleWares.csproj", "{FA41FC8D-C7AB-40A6-AEAF-A4DE17E6D14F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Brokers.Portal.Modules.Company", "Brokers.Portal.Modules.Company", "{0E0DA0DA-CF72-42C9-B848-60FA3494CFE4}"
 EndProject

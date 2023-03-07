@@ -1,5 +1,5 @@
 ﻿using Brokers.Portal.Api.Models;
-using Brokers.Portal.Modules.Users.Models;
+using Brokers.Portal.Modules.Management.Models;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
 using static Brokers.Portal.Api.Models.Responses;

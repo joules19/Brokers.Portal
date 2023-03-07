@@ -1,13 +1,8 @@
-﻿using Brokers.Portal.ExceptionHandling;
-using Brokers.Portal.Modules.Users.Models;
+﻿using Brokers.Portal.MiddleWares;
+using Brokers.Portal.Modules.Management.Models;
 using Dapper;
 using Rds.Utilities.Database.ReadWrite;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Brokers.Portal.Modules.Management.Domain.Managers
 {

@@ -18,14 +18,14 @@ namespace Brokers.Portal.Modules.Underwriting.Domain.Infrastructure
             _connectionString = connectionString;
         }
 
-        public ServiceResult<string> SubmitQuoteForVehicle(VehicleVM model)
+        public ServiceResult<string> SubmitRequestForMotor(MotorVM model)
         {
             ServiceResult<string> result = new();
             try
             {
                 using var db = DatabaseHelper.OpenDatabase(_connectionString);
 
-                var message = QuoteManager.SumbitQuoteForVehicle(db, model);
+                var message = QuoteManager.SumbitRequestForMotor(db, model);
                 result.Payload = message;
             }
             catch (Exception ex)

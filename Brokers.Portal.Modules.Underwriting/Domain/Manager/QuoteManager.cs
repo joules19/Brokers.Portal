@@ -14,7 +14,7 @@ namespace Brokers.Portal.Modules.Underwriting.Domain.Manager
 {
     public class QuoteManager
     {
-        public static string SumbitQuoteForVehicle(IDbConnection db, VehicleVM model)
+        public static string SumbitRequestForMotor(IDbConnection db, MotorVM model)
         {
             string sp = "spQuote_SubmitQuoteForVehicle";
 
@@ -52,7 +52,7 @@ namespace Brokers.Portal.Modules.Underwriting.Domain.Manager
 
             DbStore.SaveData(db, sp, prm);
 
-            return "Quote submitted Successfully.";
+            return "Request submitted Successfully.";
         }
     }
 }

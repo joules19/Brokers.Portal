@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System.Net;
 
-namespace Brokers.Portal.ExceptionHandling
+namespace Brokers.Portal.MiddleWares
 {
     public class ExceptionHandlingMiddleware : IMiddleware
     {
