@@ -35,8 +35,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brokers.Portal.Modules.Comp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Brokers.Portal.DB", "Brokers.Portal.DB", "{D3AA23DD-E3EB-4DF5-B71B-0E0F140B1A1A}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BrokersPortalDB", "BrokersPortalDB\BrokersPortalDB.sqlproj", "{77554EB2-A47C-4F84-AD59-6EE20273D4FD}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,12 +69,6 @@ Global
 		{AB3A2AA4-7E8B-4D18-B65F-B8ED356A16A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB3A2AA4-7E8B-4D18-B65F-B8ED356A16A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB3A2AA4-7E8B-4D18-B65F-B8ED356A16A3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{77554EB2-A47C-4F84-AD59-6EE20273D4FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{77554EB2-A47C-4F84-AD59-6EE20273D4FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{77554EB2-A47C-4F84-AD59-6EE20273D4FD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{77554EB2-A47C-4F84-AD59-6EE20273D4FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{77554EB2-A47C-4F84-AD59-6EE20273D4FD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{77554EB2-A47C-4F84-AD59-6EE20273D4FD}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,7 +86,6 @@ Global
 		{FA41FC8D-C7AB-40A6-AEAF-A4DE17E6D14F} = {F7BEE591-0A6C-41FD-8ABA-987B7995C318}
 		{0E0DA0DA-CF72-42C9-B848-60FA3494CFE4} = {1034024F-4B73-4DC8-916F-EB8AD1CB9C80}
 		{AB3A2AA4-7E8B-4D18-B65F-B8ED356A16A3} = {0E0DA0DA-CF72-42C9-B848-60FA3494CFE4}
-		{77554EB2-A47C-4F84-AD59-6EE20273D4FD} = {D3AA23DD-E3EB-4DF5-B71B-0E0F140B1A1A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2A988CE3-EAFD-4199-BAC7-7E75F5BEFFF2}

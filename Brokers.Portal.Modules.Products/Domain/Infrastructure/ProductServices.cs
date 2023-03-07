@@ -41,11 +41,16 @@ namespace Brokers.Portal.Modules.Products.Domain.Infrastructure
                 using var db = DatabaseHelper.OpenDatabase(_connectionString);
 
                 var packages = ProductManager.GetPackagesByProductId(db, productId);
+
+                if(packages.Count() < 1)
+                {
+                    result.HasError = true;
+                    result.ErrorMessage = "No record(s) found with that product Id";
+                }
                 result.Payload = packages;
             }
             catch (Exception ex)
             {
-
                 result.HasError = true;
                 result.ErrorMessage = ex.Message;
             }
@@ -62,6 +67,12 @@ namespace Brokers.Portal.Modules.Products.Domain.Infrastructure
                 using var db = DatabaseHelper.OpenDatabase(_connectionString);
 
                 var extensions = ProductManager.GetExtensionsByProductId(db, productId);
+
+                if (extensions.Count() < 1)
+                {
+                    result.HasError = true;
+                    result.ErrorMessage = "No record(s) found with that product Id";
+                }
                 result.Payload = extensions;
             }
             catch (Exception ex)

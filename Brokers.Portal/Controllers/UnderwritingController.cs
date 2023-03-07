@@ -2,9 +2,12 @@
 using Brokers.Portal.Modules.Underwriting.Domain.Services;
 using Brokers.Portal.Modules.Underwriting.Models.VMs;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Mime;
 
 namespace Brokers.Portal.Controllers
 {
+    [Consumes(MediaTypeNames.Application.Json)]
+    [Produces(MediaTypeNames.Application.Json)]
     [Route("api/[controller]")]
     [ApiController]
     public class UnderwritingController : ControllerBase
@@ -17,8 +20,26 @@ namespace Brokers.Portal.Controllers
 
         #region Requests
 
+
+        /// <remarks>
+        /// Sample Response:
+        /// 
+        ///     {
+        ///           "error": {},
+        ///           "data": : {
+        ///              "message": "Request submitted successfullly."
+        ///           }
+        ///     }
+        /// </remarks>
+        /// <summary>
+        ///     Accepts request data for motor.
+        /// </summary>
+        /// <response code="200">Returns Ok if submission was successful.</response>
+        /// <response code="401">If the request is not authorized</response>
+        /// <response code="400">If any required data is missing</response>
+        /// <response code="500">If something happened while submitting the request</response>
         [ApiExplorerSettings(IgnoreApi = false)]
-        [HttpGet, Route("submitrequestformotor")]
+        [HttpPost, Route("submitrequestformotor")]
         public IActionResult SubmitRequestForMotor(MotorVM model)
         {
 
@@ -31,14 +52,14 @@ namespace Brokers.Portal.Controllers
 
             if (result.HasError)
             {
-                var res = Utilities.FormCustomResponse("Something happened, please try again.", "");
+                var res = Utilities.FormCustomResponse("Something happened while submitting that request, please try again.", "");
                 return new JsonResult(res)
                 {
                     StatusCode = 500,
                 };
             }
 
-            var resX = Utilities.FormCustomResponse("", "Result Submitted Sucessfully.");
+            var resX = Utilities.FormCustomResponse("", result.Payload);
             return new JsonResult(resX)
             {
                 StatusCode = 200,

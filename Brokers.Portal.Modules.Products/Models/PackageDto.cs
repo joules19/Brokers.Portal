@@ -10,7 +10,7 @@ namespace Brokers.Portal.Modules.Products.Models
     {
         public int Id { get; set; }
         public string PackageName { get; set; }
-        public int ProductId { get; set; }
+        //public int ProductId { get; set; }
 
     }
 }

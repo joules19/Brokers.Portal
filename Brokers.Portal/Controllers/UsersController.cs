@@ -5,9 +5,6 @@ using Brokers.Portal.Modules.Management.Domain.Services;
 using Brokers.Portal.Modules.Users.Domain.Services;
 using Brokers.Portal.Modules.Users.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Net.Http.Headers;
-using Microsoft.OpenApi.Validations.Rules;
-using Serilog;
 using Swashbuckle.AspNetCore.Annotations;
 using System.Net.Mime;
 using System.Text;
@@ -15,6 +12,8 @@ using static Brokers.Portal.Api.Models.Responses;
 
 namespace Brokers.Portal.Api.Controllers
 {
+    [Consumes(MediaTypeNames.Application.Json)]
+    [Produces(MediaTypeNames.Application.Json)]
     [Route("api/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase
@@ -60,6 +59,7 @@ namespace Brokers.Portal.Api.Controllers
         /// Authenticates user then returns the userId after successful authentication.
         /// </summary>
         /// <response code="200">User authentication success.</response>
+        /// <response code="401">If the request is not authorized</response>
         /// <response code="400">Bad request: if any of companyId or password is incorrect.</response>
         /// <response code="404">Not Found: if user with that email address does not exist.</response>
         //[ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -120,6 +120,7 @@ namespace Brokers.Portal.Api.Controllers
         ///     Accepts a valid user Id then returns the corresponding user profile.
         /// </summary>
         /// <response code="200">Ok Response with User profile object</response>
+        /// <response code="401">If the request is not authorized</response>
         /// <response code="400">Bad request: if user Id is in wrong format.</response>
         /// <response code="404">Not Found: if user with that email address does not exist.</response>
         [ApiExplorerSettings(IgnoreApi = false)]
@@ -179,10 +180,11 @@ namespace Brokers.Portal.Api.Controllers
         ///     Registers a new user.
         /// </summary>
         /// <response code="201">If the user was created successfully</response>
+        /// <response code="401">If the request is not authorized</response>
         /// <response code="400">Bad request: If Supplied Email or Password is in wrong format.
         /// Bad Request: If a user with the supplied email already exists.
         /// </response>
-        /// <response code="500">If an unknwn error occured while registering user.</response>
+        /// <response code="500">If an unknown error occured while registering user.</response>
         [ApiExplorerSettings(IgnoreApi = false)]
         [SwaggerResponse(StatusCodes.Status200OK)]
         [HttpPost, Route("register")]
@@ -242,5 +244,5 @@ namespace Brokers.Portal.Api.Controllers
 //string accessTokenToJson = JsonConvert.SerializeObject(accessTokenObj);
 //var getAccessTokenResponse = JsonConvert.DeserializeObject<AccessTokenViewModel>(accessTokenToJson);
 
-//string toBeEconded = "usman@gmail.com" + ":" + "usman123";
+//string toBeEconded = "usman@gmail.com" + ":" + "usman123";;
 //string base64EncodedAuthorization = Convert.ToBase64String(Encoding.UTF8.GetBytes(toBeEconded));
