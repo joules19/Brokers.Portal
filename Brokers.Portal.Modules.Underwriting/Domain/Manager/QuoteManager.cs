@@ -16,7 +16,7 @@ namespace Brokers.Portal.Modules.Underwriting.Domain.Manager
     {
         public static string SumbitRequestForMotor(IDbConnection db, MotorVM model)
         {
-            string sp = "spQuote_SubmitQuoteForVehicle";
+            string sp = "spQuote_SubmitRequestForMotor";
 
             DynamicParameters prm = new DynamicParameters();
 

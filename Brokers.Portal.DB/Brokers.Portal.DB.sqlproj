@@ -61,7 +61,7 @@
     <Folder Include="Dbo\StoredProcedures" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Dbo\Tables\BP_Requests.sql" />
+    <Build Include="Dbo\Tables\BP_MotorRequests.sql" />
     <Build Include="Dbo\Tables\BP_Users.sql" />
     <Build Include="Dbo\Tables\BP_Applications.sql" />
     <Build Include="Dbo\Tables\BP_Companies.sql" />
@@ -96,8 +96,9 @@
     <Build Include="Dbo\StoredProcedures\spUser_UpdateUser.sql" />
     <Build Include="Dbo\StoredProcedures\spUserRole_AddUserRole.sql" />
     <Build Include="Dbo\StoredProcedures\spUserRole_GetUserRole.sql" />
+    <Build Include="Dbo\StoredProcedures\spQuote_SubmitRequestForMotor.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Brokers.Portal.DB" />
+    <None Include="BrokersPortal.publish.xml" />
   </ItemGroup>
 </Project>
