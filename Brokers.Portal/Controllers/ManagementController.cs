@@ -1,6 +1,4 @@
-﻿using Brokers.Portal.Api.Helpers;
-using Brokers.Portal.Modules.Management.Domain.Services;
-using Brokers.Portal.Modules.Users.Models;
+﻿using Brokers.Portal.Modules.Management.Domain.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Brokers.Portal.Api.Controllers
