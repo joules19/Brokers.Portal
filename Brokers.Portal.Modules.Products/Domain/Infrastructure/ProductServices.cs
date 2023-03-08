@@ -33,6 +33,57 @@ namespace Brokers.Portal.Modules.Products.Domain.Infrastructure
             return result;
         }
 
+        public ServiceResult<ProductDto> GetProductById(int productId)
+        {
+            ServiceResult<ProductDto> result = new();
+            try
+            {
+                using var db = DatabaseHelper.OpenDatabase(_connectionString);
+
+                var product = ProductManager.GetProductById(db, productId);
+
+                if (product == null)
+                {
+                    result.HasError = true;
+                    result.ErrorMessage = "No record found with that product Id";
+                }
+                result.Payload = product;
+            }
+            catch (Exception ex)
+            {
+                result.HasError = true;
+                result.ErrorMessage = ex.Message;
+            }
+
+            return result;
+        }
+
+
+        public ServiceResult<ProductDto> GetProductByName(string productName)
+        {
+            ServiceResult<ProductDto> result = new();
+            try
+            {
+                using var db = DatabaseHelper.OpenDatabase(_connectionString);
+
+                var product = ProductManager.GetProductByName(db, productName);
+
+                if (product == null)
+                {
+                    result.HasError = true;
+                    result.ErrorMessage = "The Product name is not valid";
+                }
+                result.Payload = product;
+            }
+            catch (Exception ex)
+            {
+                result.HasError = true;
+                result.ErrorMessage = ex.Message;
+            }
+
+            return result;
+        }
+
         public ServiceResult<IEnumerable<PackageDto>> GetPackagesByProductId(int productId)
         {
             ServiceResult<IEnumerable<PackageDto>> result = new();
@@ -48,6 +99,57 @@ namespace Brokers.Portal.Modules.Products.Domain.Infrastructure
                     result.ErrorMessage = "No record(s) found with that product Id";
                 }
                 result.Payload = packages;
+            }
+            catch (Exception ex)
+            {
+                result.HasError = true;
+                result.ErrorMessage = ex.Message;
+            }
+
+            return result;
+        }
+
+        public ServiceResult<PackageDto> GetPackageById(int packageId)
+        {
+            ServiceResult<PackageDto> result = new();
+            try
+            {
+                using var db = DatabaseHelper.OpenDatabase(_connectionString);
+
+                var package = ProductManager.GetPackageById(db, packageId);
+
+                if (package == null)
+                {
+                    result.HasError = true;
+                    result.ErrorMessage = "No record found with that package Id";
+                }
+                result.Payload = package;
+            }
+            catch (Exception ex)
+            {
+                result.HasError = true;
+                result.ErrorMessage = ex.Message;
+            }
+
+            return result;
+        }
+
+
+        public ServiceResult<PackageDto> GetPackageByName(string packageName)
+        {
+            ServiceResult<PackageDto> result = new();
+            try
+            {
+                using var db = DatabaseHelper.OpenDatabase(_connectionString);
+
+                var package = ProductManager.GetPackageByName(db, packageName);
+
+                if (package == null)
+                {
+                    result.HasError = true;
+                    result.ErrorMessage = "The Package name is not valid";
+                }
+                result.Payload = package;
             }
             catch (Exception ex)
             {

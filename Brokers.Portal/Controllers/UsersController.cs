@@ -68,6 +68,7 @@ namespace Brokers.Portal.Api.Controllers
         [HttpPost, Route("authenticate")]
         public IActionResult Authenticate([FromBody] AuthVm request)
         {
+            //Check if company Id is in wrong format.
             if (!Utilities.IsCompanyIdValid(request.CompanyId)) return BadRequest("Company Id is invalid");
 
             //Check Company details with company Id

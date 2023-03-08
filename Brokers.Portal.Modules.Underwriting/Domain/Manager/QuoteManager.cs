@@ -1,4 +1,5 @@
-﻿using Brokers.Portal.Modules.Underwriting.Models.VMs;
+﻿using Brokers.Portal.Modules.Underwriting.Models;
+using Brokers.Portal.Modules.Underwriting.Models.VMs;
 using Dapper;
 using Microsoft.AspNetCore.Http;
 using Rds.Utilities.Database.ReadWrite;
@@ -14,45 +15,58 @@ namespace Brokers.Portal.Modules.Underwriting.Domain.Manager
 {
     public class QuoteManager
     {
-        public static string SumbitRequestForMotor(IDbConnection db, MotorVM model)
+        public static string? SumbitRequestForMotor(IDbConnection db, RequestDto model)
         {
             string sp = "spQuote_SubmitRequestForMotor";
 
             DynamicParameters prm = new DynamicParameters();
 
-            prm.Add("@Title", model.Title);
-            prm.Add("@FirstName", model.FirstName);
-            prm.Add("@Surname", model.Surname);
-            prm.Add("@Email", model.Email);
-            prm.Add("@Mobile", model.Mobile);
-            prm.Add("@Dob", model.Dob);
-            prm.Add("@Gender", model.Gender);
+            prm.Add("@RequestId", model.RequestId);
+            prm.Add("@BrokerId", model.BrokerId);
+            prm.Add("@ProductId", model.ProductId);
+            prm.Add("@PackageId", model.PackageId);
+            prm.Add("@InsuredName", model.InsuredName);
             prm.Add("@Occupation", model.Occupation);
-            prm.Add("@Address", model.Address);
-            prm.Add("@State", model.State);
-            prm.Add("@IdentificationType", model.IdentificationType);
-            prm.Add("@IdentificationNumber", model.IdentificationNumber);
-            prm.Add("@IdUpload", model.IdUpload);
-            prm.Add("@IdUploadUrl", model.IdUploadUrl);
+            prm.Add("@EmailAddress", model.EmailAddress);
             prm.Add("@TypeOfCover", model.TypeOfCover);
-            prm.Add("@VehicleCategory", model.VehicleCategory);
-            prm.Add("@VehicleValue", model.VehicleValue);
-            prm.Add("@PaymentOption", model.PaymentOption);
             prm.Add("@VehicleMake", model.VehicleMake);
-            prm.Add("@ModelOfVehicle", model.ModelOfVehicle);
-            prm.Add("@RegistrationNumber", model.RegistrationNumber);
-            prm.Add("@ChasisNumber", model.ChasisNumber);
-            prm.Add("@EngineNumber", model.EngineNumber);
             prm.Add("@YearOfMake", model.YearOfMake);
             prm.Add("@InsuranceStartDate", model.InsuranceStartDate);
-            prm.Add("@VehicleColor", model.VehicleColor);
-            prm.Add("@TotalCost", model.TotalCost);
+            prm.Add("@VehicleValue", model.VehicleValue);
+            prm.Add("@InsuredValue", model.InsuredValue);
+            prm.Add("@ModeOfPayment", model.ModeOfPayment);
+            prm.Add("@PolicyHolder", model.PolicyHolder);
+            prm.Add("@Mobile", model.Mobile);
+            prm.Add("@Address", model.Address);
+            prm.Add("@TypeOfUsage", model.TypeOfUsage);
+            prm.Add("@RegistrationNumber", model.RegistrationNumber);
+            prm.Add("@CoverPeriod", model.CoverPeriod);
+            prm.Add("@PremiumRate", model.PremiumRate);
+            prm.Add("@Premium", model.Premium);
+            prm.Add("@IdUploadUrl", model.IdUploadUrl);
+            prm.Add("@UtilityBillUploadUrl", model.UtilityBillUploadUrl);
+            prm.Add("@VehicleLicenseUploadUrl", model.VehicleLicenseUploadUrl);
+            prm.Add("@BuildingValue", model.BuildingValue);
+            prm.Add("@BuildingLocation", model.BuildingLocation);
+            prm.Add("@BuildingPurpose", model.BuildingPurpose);
             prm.Add("@DateCreated", model.DateCreated);
-
 
             DbStore.SaveData(db, sp, prm);
 
-            return "Request submitted Successfully.";
+            return model.RequestId;
+        }
+
+        public static RequestDto? GetRequestByRequestId(IDbConnection db, string requestId)
+        {
+            string sp = "spQuote_GetRequestByRequestId";
+
+            DynamicParameters prm = new DynamicParameters();
+
+            prm.Add("@RequestId", requestId);
+
+            var requestData = DbStore.LoadData<RequestDto>(db, sp, prm);
+
+            return requestData.FirstOrDefault();
         }
     }
 }
