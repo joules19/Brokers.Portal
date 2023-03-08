@@ -68,9 +68,6 @@ namespace Brokers.Portal.Api.Controllers
         [HttpPost, Route("authenticate")]
         public IActionResult Authenticate([FromBody] AuthVm request)
         {
-            string toBeEconded = "usman@gmail.com" + ":" + "usman123";;
-            string base64EncodedAuthorization = Convert.ToBase64String(Encoding.UTF8.GetBytes(toBeEconded));
-
             //Check Company details with company Id
             var companyResult = _companyServices.GetCompanyByCompanyId(request.CompanyId);
 
