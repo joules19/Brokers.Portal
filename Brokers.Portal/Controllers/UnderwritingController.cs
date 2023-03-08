@@ -65,7 +65,7 @@ namespace Brokers.Portal.Controllers
         ///     }
         /// </remarks>
         /// <summary>
-        ///     Accepts and process request data for motor and returns the request data when operation is successful.
+        ///     Accepts and process request data for motor and returns the request data when operation is successful
         /// </summary>
         /// <response code="200">Returns Ok with quote data if submission was successful.</response>
         /// <response code="401">If the request is not authorized</response>
