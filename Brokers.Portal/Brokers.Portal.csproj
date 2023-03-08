@@ -26,8 +26,6 @@
 
   <ItemGroup>
     <None Include="bin\Debug\net6.0\Brokers.Portal.dll" />
-    <None Include="bin\Debug\net6.0\Brokers.Portal.ExceptionHandling.dll" />
-    <None Include="bin\Debug\net6.0\Brokers.Portal.ExceptionHandling.pdb" />
     <None Include="bin\Debug\net6.0\Brokers.Portal.exe" />
     <None Include="bin\Debug\net6.0\Brokers.Portal.Modules.Company.dll" />
     <None Include="bin\Debug\net6.0\Brokers.Portal.Modules.Company.pdb" />
@@ -83,7 +81,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Brokers.Portal.ExceptionHandling\Brokers.Portal.ExceptionHandling.csproj" />
     <ProjectReference Include="..\Brokers.Portal.Modules.Companies\Brokers.Portal.Modules.Company.csproj" />
     <ProjectReference Include="..\Brokers.Portal.Modules.Management\Brokers.Portal.Modules.Management.csproj" />
     <ProjectReference Include="..\Brokers.Portal.Modules.Products\Brokers.Portal.Modules.Products.csproj" />

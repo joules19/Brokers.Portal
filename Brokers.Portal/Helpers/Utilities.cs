@@ -95,7 +95,7 @@ namespace Brokers.Portal.Api.Helpers
             return valid;
         }
 
-        public static Boolean IsBase64String(String value)
+        public static Boolean IsBase64String(string value)
         {
             if (value == null || value.Length == 0 || value.Length % 4 != 0
                 || value.Contains(' ') || value.Contains('\t') || value.Contains('\r') || value.Contains('\n'))
@@ -109,6 +109,17 @@ namespace Brokers.Portal.Api.Helpers
                 if (IsInvalid(value[i]))
                     return false;
             return true;
+        }
+
+        public static Boolean IsCompanyIdValid(string companyId)
+        {
+            string firstThree = companyId.Substring(0, companyId.IndexOf("-") + 1);
+            var remCharacters = companyId.Substring(companyId.IndexOf("-") + 1);
+            if (firstThree != "BP-") return false;
+            if (remCharacters.Length > 5 || remCharacters.Length < 5 ) return false; 
+
+            return true;
+
         }
 
         private static Boolean IsInvalid(char value)
