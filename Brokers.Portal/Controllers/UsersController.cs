@@ -68,12 +68,17 @@ namespace Brokers.Portal.Api.Controllers
         [HttpPost, Route("authenticate")]
         public IActionResult Authenticate([FromBody] AuthVm request)
         {
+            string toBeEconded = "usman@gmail.com" + ":" + "usman123";;
+            string base64EncodedAuthorization = Convert.ToBase64String(Encoding.UTF8.GetBytes(toBeEconded));
+
             //Check Company details with company Id
             var companyResult = _companyServices.GetCompanyByCompanyId(request.CompanyId);
 
-            if (companyResult.HasError) return BadRequest("Company Id is invalid");
+            if (companyResult.HasError) return BadRequest(companyResult.ErrorMessage);
 
             if (!companyResult.Payload.IsActive) return BadRequest("Company is not active");
+
+            if (!Utilities.IsBase64String(request.LoginCredential)) return BadRequest("Login Credential is in wrong format.");
 
             //Decoding base64 logincredentials
             byte[] encodedStringToByte = Convert.FromBase64String(request.LoginCredential);

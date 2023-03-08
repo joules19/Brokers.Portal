@@ -69,14 +69,18 @@ namespace Brokers.Portal.Modules.Company.Domain.Infrastructure
                 using var db = DatabaseHelper.OpenDatabase(_connectionString);
                 var company = CompanyManager.GetCompany(db, companyId);
 
+                if (company == null)
+                {
+                    result.HasError = true;
+                    result.ErrorMessage = "Company with that companyId does not exist.";
+                }
+
                 result.Payload = company;
             }
             catch (Exception ex)
             {
                 result.HasError = true;
                 result.ErrorMessage = ex.Message;
-
-           
             }
 
             return result;
